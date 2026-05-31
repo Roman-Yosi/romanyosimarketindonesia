@@ -1,183 +1,264 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:version='2' xmlns='http://www.w3.org/1999/xhtml'
-      xmlns:b='http://www.google.com/2005/gml/b'
-      xmlns:data='http://www.google.com/2005/gml/data'
-      xmlns:expr='http://www.google.com/2005/gml/expr'>
-
+<html lang="id">
 <head>
-  <title>ROMAN YOSI TV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset='UTF-8'/>
-  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<title>Roman Yosi Market Indonesia</title>
 
-  <style>
-    body {
-      margin:0;
-      background:#000;
-      color:#fff;
-      font-family:sans-serif;
-      display:flex;
-    }
+<meta name="description" content="Roman Yosi Market Indonesia - Marketplace Online Indonesia untuk jual beli produk, layanan digital, musik, merchandise dan kebutuhan lainnya.">
 
-    .sidebar{
-      width:220px;
-      background:#111;
-      height:100vh;
-      position:fixed;
-      padding:20px;
-    }
+<meta name="keywords" content="marketplace indonesia, jual beli online, roman yosi market indonesia, toko online indonesia">
 
-    .sidebar h2{
-      color:#ff0050;
-    }
+<meta name="author" content="Roman Yosi">
 
-    .menu a{
-      display:block;
-      color:#fff;
-      text-decoration:none;
-      margin:12px 0;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
 
-    .main{
-      margin-left:240px;
-      width:100%;
-      height:100vh;
-      overflow-y:scroll;
-      scroll-snap-type:y mandatory;
-    }
+body{
+background:#f5f5f5;
+color:#333;
+}
 
-    .video-box{
-      height:100vh;
-      scroll-snap-align:start;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      position:relative;
-    }
+header{
+background:#0057b8;
+color:white;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
 
-    video{
-      height:90%;
-      border-radius:12px;
-    }
+.logo{
+font-size:28px;
+font-weight:bold;
+}
 
-    .actions{
-      position:absolute;
-      right:20px;
-      bottom:100px;
-      text-align:center;
-    }
+.search-box{
+flex:1;
+margin:10px 20px;
+}
 
-    .actions div{
-      margin:15px 0;
-      cursor:pointer;
-    }
+.search-box input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+}
 
-    .info{
-      position:absolute;
-      bottom:40px;
-      left:20px;
-    }
+.menu a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+font-weight:bold;
+}
 
-    .ads{
-      position:absolute;
-      top:10px;
-      right:10px;
-      background:#fff;
-      color:#000;
-      padding:8px;
-      border-radius:6px;
-    }
+.hero{
+background:linear-gradient(135deg,#0057b8,#00a2ff);
+color:white;
+text-align:center;
+padding:80px 20px;
+}
 
-    .topbar{
-      position:fixed;
-      top:0;
-      left:240px;
-      right:0;
-      background:#000;
-      padding:10px;
-      border-bottom:1px solid #222;
-      text-align:center;
-    }
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
 
-    .live{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:red;
-      padding:15px;
-      border-radius:50%;
-      cursor:pointer;
-    }
-  </style>
+.hero p{
+font-size:18px;
+max-width:700px;
+margin:auto;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:white;
+color:#0057b8;
+text-decoration:none;
+font-weight:bold;
+border-radius:8px;
+}
+
+.section-title{
+text-align:center;
+padding:40px 20px 20px;
+font-size:30px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
+}
+
+.price{
+color:#e63946;
+font-size:22px;
+font-weight:bold;
+margin:10px 0;
+}
+
+.buy-btn{
+display:block;
+text-align:center;
+background:#0057b8;
+color:white;
+padding:10px;
+border-radius:8px;
+text-decoration:none;
+}
+
+.features{
+background:white;
+padding:60px 20px;
+margin-top:30px;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.feature{
+text-align:center;
+padding:20px;
+}
+
+.feature h3{
+margin:10px 0;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px 20px;
+margin-top:40px;
+}
+</style>
 </head>
-
 <body>
 
-  <!-- Sidebar -->
-  <div class='sidebar'>
-    <h2>ROMAN YOSI TV</h2>
+<header>
+<div class="logo">RomanYosi Market Indonesia</div>
 
-    <div class='menu'>
-      <a href='#'>Jelajahi</a>
-      <a href='#'>Terdekat</a>
-      <a href='#'>Teman</a>
-      <a href='#'>Mengikuti</a>
-      <a href='#'>Saran</a>
-      <hr/>
-      <a href='#'>Live</a>
-    </div>
-  </div>
+<div class="search-box">
+<input type="text" placeholder="Cari produk...">
+</div>
 
-  <!-- Topbar -->
-  <div class='topbar'>
-    Untuk Anda | Mengikuti
-  </div>
+<div class="menu">
+<a href="#">Beranda</a>
+<a href="#">Kategori</a>
+<a href="#">Toko</a>
+<a href="#">Kontak</a>
+</div>
+</header>
 
-  <!-- Main -->
-  <div class='main'>
+<section class="hero">
+<h1>Roman Yosi Market Indonesia</h1>
+<p>
+Marketplace Indonesia untuk jual beli produk, layanan digital,
+musik, merchandise, dan berbagai kebutuhan lainnya.
+</p>
+<a href="#" class="btn">Mulai Belanja</a>
+</section>
 
-    <div class='video-box'>
-      <video autoplay='autoplay' loop='loop' muted='muted'>
-        <source src='https://www.w3schools.com/html/mov_bbb.mp4' type='video/mp4'/>
-      </video>
+<h2 class="section-title">Produk Unggulan</h2>
 
-      <div class='info'>
-        <h3>@romanyosi</h3>
-        <p>Video viral 🔥</p>
-      </div>
+<section class="products">
 
-      <div class='actions'>
-        <div onclick='like(this)'>❤️<br/><span>10</span></div>
-        <div onclick='comment()'>💬</div>
-        <div onclick='share()'>🔗</div>
-      </div>
+<div class="card">
+<img src="https://picsum.photos/400/300?random=1" alt="Produk">
+<div class="card-content">
+<h3>Headphone Premium</h3>
+<div class="price">Rp299.000</div>
+<a href="#" class="buy-btn">Beli Sekarang</a>
+</div>
+</div>
 
-      <div class='ads'>IKLAN</div>
-    </div>
+<div class="card">
+<img src="https://picsum.photos/400/300?random=2" alt="Produk">
+<div class="card-content">
+<h3>Smart Watch</h3>
+<div class="price">Rp450.000</div>
+<a href="#" class="buy-btn">Beli Sekarang</a>
+</div>
+</div>
 
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/300?random=3" alt="Produk">
+<div class="card-content">
+<h3>Laptop Gaming</h3>
+<div class="price">Rp9.999.000</div>
+<a href="#" class="buy-btn">Beli Sekarang</a>
+</div>
+</div>
 
-  <div class='live' onclick='live()'>LIVE</div>
+</section>
 
-  <script type='text/javascript'>
-    function like(el){
-      var span = el.getElementsByTagName("span")[0];
-      span.innerHTML = parseInt(span.innerHTML) + 1;
-    }
+<section class="features">
+<div class="feature-grid">
 
-    function comment(){
-      alert("Komentar (simulasi)");
-    }
+<div class="feature">
+<h3>🛒 Marketplace Modern</h3>
+<p>Platform jual beli yang cepat dan mudah digunakan.</p>
+</div>
 
-    function share(){
-      alert("Link dibagikan!");
-    }
+<div class="feature">
+<h3>🔒 Aman</h3>
+<p>Keamanan transaksi dan data pengguna menjadi prioritas.</p>
+</div>
 
-    function live(){
-      alert("Fitur live");
-    }
-  </script>
+<div class="feature">
+<h3>🇮🇩 Indonesia</h3>
+<p>Mendukung UMKM dan kreator lokal Indonesia.</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+<h3>Roman Yosi Market Indonesia</h3>
+<p>Marketplace Indonesia untuk semua kebutuhan.</p>
+<p>© 2026 Roman Yosi Market Indonesia. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
