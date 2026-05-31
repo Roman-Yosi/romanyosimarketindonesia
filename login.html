@@ -76,9 +76,9 @@ button:hover{
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-// 🔥 FIREBASE CONFIG (PAKAI PUNYA KAMU)
+/* 🔥 FIREBASE CONFIG (PASTIKAN INI SAMA PERSIS DARI FIREBASE KAMU) */
 const firebaseConfig = {
-  apiKey: "AIzaSyCBTjk3eRMO356ADYTX3sbpY4xDSjJzqK0",
+  apiKey: "ISI_API_KEY_DARI_FIREBASE",
   authDomain: "musicos-studio.firebaseapp.com",
   projectId: "musicos-studio",
   storageBucket: "musicos-studio.appspot.com",
@@ -109,7 +109,7 @@ window.login = function(){
     })
     .catch((err) => {
       console.log(err);
-      error.innerText = err.message;
+      error.innerText = "Login gagal: " + err.message;
     });
 
 };
