@@ -75,9 +75,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-/* 🔥 FIREBASE CONFIG */
+/* 🔥 FIREBASE CONFIG (WAJIB SAMA DENGAN INDEX & LOGIN) */
 const firebaseConfig = {
-  apiKey: "ISI_API_KEY_DARI_FIREBASE",
+  apiKey: "AIzaSyCBTjk3eRMO356ADYTX3sbpY4xDSjJzqK0",
   authDomain: "musicos-studio.firebaseapp.com",
   projectId: "musicos-studio",
   storageBucket: "musicos-studio.appspot.com",
@@ -93,7 +93,7 @@ const status = document.getElementById("status");
 
 let currentUser = null;
 
-/* 🔥 CEK LOGIN */
+/* 🔐 CHECK LOGIN */
 onAuthStateChanged(auth, (user) => {
   currentUser = user;
 
@@ -105,7 +105,7 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-/* 🔥 TAMBAH PRODUK */
+/* ➕ TAMBAH PRODUK */
 window.addProduct = async function(){
 
   if(!currentUser){
