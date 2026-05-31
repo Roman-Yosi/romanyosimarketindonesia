@@ -1,183 +1,158 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:version='2' xmlns='http://www.w3.org/1999/xhtml'
-      xmlns:b='http://www.google.com/2005/gml/b'
-      xmlns:data='http://www.google.com/2005/gml/data'
-      xmlns:expr='http://www.google.com/2005/gml/expr'>
-
+<html lang="id">
 <head>
-  <title>ROMAN YOSI TV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset='UTF-8'/>
-  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<title>Roman Yosi Market Indonesia</title>
 
-  <style>
-    body {
-      margin:0;
-      background:#000;
-      color:#fff;
-      font-family:sans-serif;
-      display:flex;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+body{background:#f5f5f5;}
 
-    .sidebar{
-      width:220px;
-      background:#111;
-      height:100vh;
-      position:fixed;
-      padding:20px;
-    }
+header{
+background:#0057b8;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+}
 
-    .sidebar h2{
-      color:#ff0050;
-    }
+.logo{font-weight:bold;font-size:22px;}
 
-    .menu a{
-      display:block;
-      color:#fff;
-      text-decoration:none;
-      margin:12px 0;
-    }
+.menu a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
+}
 
-    .main{
-      margin-left:240px;
-      width:100%;
-      height:100vh;
-      overflow-y:scroll;
-      scroll-snap-type:y mandatory;
-    }
+.hero{
+background:linear-gradient(135deg,#0057b8,#00a2ff);
+color:white;
+text-align:center;
+padding:80px 20px;
+}
 
-    .video-box{
-      height:100vh;
-      scroll-snap-align:start;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      position:relative;
-    }
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:white;
+color:#0057b8;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
 
-    video{
-      height:90%;
-      border-radius:12px;
-    }
+.section{
+padding:60px 20px;
+text-align:center;
+}
 
-    .actions{
-      position:absolute;
-      right:20px;
-      bottom:100px;
-      text-align:center;
-    }
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
+}
 
-    .actions div{
-      margin:15px 0;
-      cursor:pointer;
-    }
+.card{
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
 
-    .info{
-      position:absolute;
-      bottom:40px;
-      left:20px;
-    }
+.price{color:red;font-weight:bold;margin:10px 0;}
 
-    .ads{
-      position:absolute;
-      top:10px;
-      right:10px;
-      background:#fff;
-      color:#000;
-      padding:8px;
-      border-radius:6px;
-    }
+.buy{
+display:block;
+padding:10px;
+background:#0057b8;
+color:white;
+text-decoration:none;
+border-radius:6px;
+}
+</style>
 
-    .topbar{
-      position:fixed;
-      top:0;
-      left:240px;
-      right:0;
-      background:#000;
-      padding:10px;
-      border-bottom:1px solid #222;
-      text-align:center;
-    }
-
-    .live{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:red;
-      padding:15px;
-      border-radius:50%;
-      cursor:pointer;
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- Sidebar -->
-  <div class='sidebar'>
-    <h2>ROMAN YOSI TV</h2>
+<header>
+<div class="logo">RomanYosi Market</div>
 
-    <div class='menu'>
-      <a href='#'>Jelajahi</a>
-      <a href='#'>Terdekat</a>
-      <a href='#'>Teman</a>
-      <a href='#'>Mengikuti</a>
-      <a href='#'>Saran</a>
-      <hr/>
-      <a href='#'>Live</a>
-    </div>
-  </div>
+<div class="menu">
+<a href="#home">Beranda</a>
+<a href="#kategori">Kategori</a>
+<a href="#toko">Toko</a>
+<a href="https://instagram.com/kromantv1" target="_blank">Kontak</a>
+</div>
+</header>
 
-  <!-- Topbar -->
-  <div class='topbar'>
-    Untuk Anda | Mengikuti
-  </div>
+<!-- HERO -->
+<section id="home" class="hero">
+<h1>Roman Yosi Market Indonesia</h1>
+<p>Marketplace Indonesia untuk jual beli produk</p>
+<a href="#toko" class="btn">Mulai Belanja</a>
+</section>
 
-  <!-- Main -->
-  <div class='main'>
+<!-- KATEGORI -->
+<section id="kategori" class="section">
+<h2>Kategori</h2>
+<p>Elektronik | Fashion | Musik | Digital Product</p>
+</section>
 
-    <div class='video-box'>
-      <video autoplay='autoplay' loop='loop' muted='muted'>
-        <source src='https://www.w3schools.com/html/mov_bbb.mp4' type='video/mp4'/>
-      </video>
+<!-- TOKO -->
+<section id="toko" class="section">
+<h2>Produk Terbaru</h2>
+<div class="products" id="productList"></div>
+</section>
 
-      <div class='info'>
-        <h3>@romanyosi</h3>
-        <p>Video viral 🔥</p>
+<!-- 🔥 FIREBASE SCRIPT (SUDAH FIX) -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCBTjk3eRMO356ADYTX3sbpY4xDSjJzqK0",
+  authDomain: "musicos-studio.firebaseapp.com",
+  projectId: "musicos-studio",
+  storageBucket: "musicos-studio.appspot.com",
+  messagingSenderId: "1025793334771",
+  appId: "1:1025793334771:web:b1be41ed205ee0aec80686"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const productList = document.getElementById("productList");
+
+async function load() {
+  const snap = await getDocs(collection(db, "products"));
+
+  snap.forEach(doc => {
+    const data = doc.data();
+
+    productList.innerHTML += `
+      <div class="card">
+        <h3>${data.name}</h3>
+        <img src="${data.image}" style="width:100%;height:150px;object-fit:cover;">
+        <p class="price">Rp${data.price}</p>
+        <p>${data.category}</p>
+        <a href="#" class="buy">Beli Sekarang</a>
       </div>
+    `;
+  });
+}
 
-      <div class='actions'>
-        <div onclick='like(this)'>❤️<br/><span>10</span></div>
-        <div onclick='comment()'>💬</div>
-        <div onclick='share()'>🔗</div>
-      </div>
-
-      <div class='ads'>IKLAN</div>
-    </div>
-
-  </div>
-
-  <div class='live' onclick='live()'>LIVE</div>
-
-  <script type='text/javascript'>
-    function like(el){
-      var span = el.getElementsByTagName("span")[0];
-      span.innerHTML = parseInt(span.innerHTML) + 1;
-    }
-
-    function comment(){
-      alert("Komentar (simulasi)");
-    }
-
-    function share(){
-      alert("Link dibagikan!");
-    }
-
-    function live(){
-      alert("Fitur live");
-    }
-  </script>
+load();
+</script>
 
 </body>
 </html>
